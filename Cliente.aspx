@@ -120,10 +120,26 @@
                 </tr>
 
                 <!-- ENDEREÇO -->
+                
                 <tr>
-                     <td><asp:Label ID="lbl_CEP" runat="server" Text="CEP"></asp:Label></td>
-                     <td class="auto-style3"><asp:TextBox ID="txt_CEP" runat="server" Width="385px"></asp:TextBox></td>
+                     <td>CEP</td>
+                     <td class="auto-style3"><asp:TextBox ID="txt_cep" runat="server" Width="247px"></asp:TextBox>
+                        <asp:Button ID="Bt_Buscar" runat="server" Text="Buscar" Width="115px" Height="32px" OnClick="Bt_Buscar_Click"/>
+                     </td>
                 </tr>
+                <tr>
+                    <td>Cidade</td>
+                    <td class="auto-style3"><asp:TextBox ID="txt_Cidade" runat="server" Width="385px"></asp:TextBox></td>
+                <tr>
+                    <td>Bairro</td>
+                    <td class="auto-style3"><asp:TextBox ID="txt_Bairro" runat="server" Width="385px"></asp:TextBox></td>
+                </tr>
+                    
+                <tr>
+                    <td class="auto-style1">Estado</td>
+                    <td class="auto-style3"><asp:TextBox ID="txt_Estado" runat="server" Width="385px"></asp:TextBox></td>
+                </tr>
+                    
 
                 <!-- CONTATO -->
                 
@@ -160,6 +176,7 @@
                     
                     <td class="auto-style2"><asp:Label ID="msg_lb" runat="server" Text="Mensagem"></asp:Label></td>
                     <td class="auto-style5"><asp:Label ID="lbl_msg" runat="server" Text="lbl_msg"></asp:Label></td>
+                    <td class="auto-style5"><asp:Label ID="lbl_resultado" runat="server" Text="lbl_msg"></asp:Label></td>
                 
             
                 <tr>
@@ -180,7 +197,10 @@
                         </asp:gridview>
                         <asp:sqldatasource id="srtec" runat="server" connectionstring="<%$ connectionstrings:srtecconnectionstring %>" selectcommand="select [id_dados], [dados_nome], [dados_cpf] from [tab_dadosgerais]"></asp:sqldatasource>
                     </td>
-                    
+                    <td class="auto-style4"><asp:Button ID="Bt_Gravar" runat="server" Text="Gravar" OnClick="Bt_Gravar_Click" Width="126px" Height="32px" />
+                      <asp:Button ID="Bt_Deletar" runat="server" Text="Deletar" Width="126px" Height="32px" OnClick="Bt_Deletar_Click" />
+                      <asp:Button ID="Bt_Alterar" runat="server" Text="Alterar" Width="126px" Height="32px" OnClick="Bt_Alterar_Click" />
+                  </td>
 
                     
                 </table>

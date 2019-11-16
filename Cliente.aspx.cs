@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,6 +15,24 @@ public partial class Cliente : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+    }
+
+    protected void Bt_Buscar_Click(object sender, EventArgs e)
+    {
+        DataSet ds = new DataSet();
+        ds.ReadXml("http://cep.republicavirtual.com.br/web_cep.php?cep=" + txt_cep.Text);
+        if (ds != null)
+        {
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                txt_Estado.Text = ds.Tables[0].Rows[0]["uf"].ToString().Trim();
+                txt_Cidade.Text = ds.Tables[0].Rows[0]["cidade"].ToString().Trim();
+                txt_Bairro.Text = ds.Tables[0].Rows[0]["bairro"].ToString().Trim();
+                lbl_resultado.Text = ds.Tables[0].Rows[0]["resultado_txt"].ToString().Trim();
+
+
+            }
+        }
     }
 
     protected void Bt_Gravar_Click(object sender, EventArgs e)
