@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Estoque.aspx.cs" Inherits="Estoque" %>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->

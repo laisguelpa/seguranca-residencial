@@ -16,6 +16,52 @@
 
     </head>
 <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="Default.aspx">SrTec</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav">
+                    
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Pessoas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="Cliente.aspx">Cliente</a>
+                              <a class="dropdown-item" href="Funcionario.aspx">Funcionário</a>
+                            </div>
+                          </li>
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Produto
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="Fornecedor.aspx">Fornecedor</a>
+                              <a class="dropdown-item" href="Produto.aspx">Produto</a>
+                              <a class="dropdown-item" href="Estoque.aspx">Estoque</a>
+                              <a class="dropdown-item" href="Categoria.aspx">Categoria</a>
+                            </div>
+                          </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Empresa
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="Operacao.aspx">Instalação / Operação</a>
+                      </div>
+                    </li>
+
+                    <li class="nav-item active">
+                            <a class="nav-link" href="login.aspx">Login<span class="sr-only">(current)</span></a>
+                    </li>
+
+                  </ul>
+                </div>
+              </nav>
+    
     <form id="form1" runat="server">
     <div>
 
@@ -48,10 +94,7 @@
                         </asp:gridview>
                         <asp:sqldatasource id="srtec" runat="server" connectionstring="<%$ connectionstrings:srtecconnectionstring %>" selectcommand="select [id_dados], [dados_nome], [dados_cpf] from [tab_dadosgerais]"></asp:sqldatasource>
                     </td>
-                    <td class="auto-style4"><asp:Button ID="Bt_Gravar" runat="server" Text="Gravar" OnClick="Bt_Gravar_Click" Width="126px" Height="32px" />
-                        <asp:Button ID="Bt_Deletar" runat="server" Text="Deletar" Width="126px" Height="32px" OnClick="Bt_Deletar_Click" />
-                        <asp:Button ID="Bt_Alterar" runat="server" Text="Alterar" Width="126px" Height="32px" OnClick="Bt_Alterar_Click" />
-                    </td>
+                    
 
                     
                 </table>
